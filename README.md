@@ -16,10 +16,6 @@
 <p>O TypeScript adiciona recursos de tipagem estática opcional e outras funcionalidades. Como ele não é uma linguagem em si, ao compilar um código TypeScript, ele é transformado para JavaScript pelo compilador.</p>
 <p><br>Saiba Mais sobre TypeScript: https://kinsta.com/pt/base-de-conhecimento/o-que-e-typescript/</p>
 
-<div align="center">
-<img src="https://kinsta.com/pt/wp-content/uploads/sites/3/2023/05/what-is-typescript-2048x1024.jpeg" height="500"/>
-</div>
-
 <div align="center" style="display: flex; flex-direction: row;">
 <img src="https://www.svgrepo.com/show/373703/js.svg" height="70"/>
 <img src="https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png" height="70"/>
