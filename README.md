@@ -1,4 +1,4 @@
-<h1>JavaScript - Node Js - TypeScript</h1>
+<h1>JavaScript</h1>
 
 <div align="center">
 <img src="https://e0.pxfuel.com/wallpapers/210/608/desktop-wallpaper-programming-javascript-javascript-code.jpg" height="500"/>
