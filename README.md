@@ -1,7 +1,7 @@
 <h1>JavaScript</h1>
 
 <div align="center">
-<img src="https://e0.pxfuel.com/wallpapers/210/608/desktop-wallpaper-programming-javascript-javascript-code.jpg" height="500"/>
+<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGw0Y3J6OTNvY2d3bGdvc3puazEzM3I0Y2lvZG9rNHJvdThnaXVyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26tn33aiTi1jkl6H6/giphy.gif" height="500"/>
 </div>
 
 <h1> O que é JavaScript? </h1>
