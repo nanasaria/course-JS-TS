@@ -8,6 +8,13 @@ function private() {
         evento.preventDefault();
         const peso = form.querySelector('.peso')
         const altura = form.querySelector('.altura')
+
+        if(isNaN(peso.value)) {
+            resultado.innerHTML = 'Peso inválido'
+        }else if(isNaN(altura.value)){
+            resultado.innerHTML = 'Altura inválida'
+        }
+
         const imc = (parseFloat(peso.value) / (Math.pow(parseFloat(altura.value), 2))).toFixed(2)
 
         if (imc <= 18.5){
