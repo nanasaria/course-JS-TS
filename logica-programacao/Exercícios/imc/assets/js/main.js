@@ -29,7 +29,7 @@ function private() {
             resultado.innerHTML = `Seu IMC é ${imc}`
             imcHtml.innerHTML = ` você está com Obesidade grau 3`
         } else{
-            imcHtml.innerHTML = `Peso inválido`
+            imcHtml.innerHTML = `Dados inválidos`
         }
     }
 
