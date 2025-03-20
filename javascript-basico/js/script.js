@@ -96,3 +96,85 @@ const fatia = professores.slice(0, 3); // Pegar os elementos 1 e 2.
 console.log(`professores: ${professores} e alguns elementos (fatia): ${fatia}`);
 
 console.log(professores instanceof Array); // Verificar se é array
+
+// Funções
+function saudacao() { console.log('Hello World!') } // Corpo da função
+saudacao() // Chamar função
+function saudacaoCliente(nome) { return `Olá, ${nome}` } // Função para receber parâmetro
+console.log(saudacaoCliente('Mariane')) // Chamando a função com parâmetro
+
+function soma(x,y) {
+    return x + y;
+}
+console.log(soma(5,5))
+
+//Caso em que não pode:
+// console.log(x) -> Não pode acessar uma variável dentro da função porque o que está dentro dela, pertence somente a ela. 
+
+// Funções anônimas
+const raizQuadrada = function (n) {
+    return n ** 0.5
+} // Função anônima em uma constante
+
+console.log(raizQuadrada(9))
+
+// Arrow functions
+const potenciaDeDois = n => Math.pow(Number(n),2) // Simplificação da função, ou seja, em arrow function
+console.log(potenciaDeDois(9))
+
+// Objetos
+const profissional = {
+    nome: 'Marilene',
+    idade: '20',
+    profissão: 'Médica'
+} // Estrutura para criar objeto 
+
+console.log(profissional)
+
+//Função para criar um objeto "Pessoa" com 3 parâmetros
+// function pessoa(nome, sobrenome, idade) {
+//     return {
+//         nome: nome, -> Não precisa dessas repetições porque o 
+//         sobrenome: sobrenome, -> próprio JavaScript reconhece
+//         idade: idade -> que deve ter um item com esse mesmo nome quando não o passa.
+//     }
+// } 
+
+function pessoa(nome, sobrenome, idade) {
+    return {
+        nome,
+        sobrenome,
+        idade
+    }
+}
+
+const pessoa1 = pessoa('Lucas', 'Rodrigues', '23') // Quando enviamos um valor para um parâmetro, isso é um argumento. Ou seja, o valor que é passado é ARGUMENTO.
+const pessoa2 = pessoa('Larissa', 'Rodrigues', '28')
+const pessoa3 = pessoa('Luiza', 'Rodrigues', '18')
+
+console.log(pessoa1.nome, pessoa2.nome, pessoa3.nome) // Trazer o valor do atributo "nome" de cada objeto.
+
+//Métodos
+const professor = {
+    nome: 'Ícaro',
+    materia: 'História',
+    turno: 'noite',
+    sala: '20',
+
+    //Quando uma função está dentro de um objeto, isso é um MÉTODO.
+    leciona () {
+        return `O professor ${this.nome} leciona a matéria ${this.materia} no turno da ${this.turno} na sala ${this.sala}`
+    } // this é usado para chamar um atributo de dentro do objeto para o método.
+}
+
+console.log(professor.leciona())
+
+/* 
+Valores Primitivos (valores imutáveis):
+String, number, boolean, undefined, null, bigint, symbol
+São valores copiados.
+
+Valores por Referência (valores mutáveis): array, object e function.
+const b = a{} 
+*/
+
