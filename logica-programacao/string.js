@@ -73,4 +73,34 @@ console.log(formatDate(date));
 
 /*
 Estrutura condicional Switch/Case
+
+- O Switch só funciona com números ou strings.
 */
+let diaDaSemana = new Date().getDay()
+
+switch(diaDaSemana) {
+  case 0: diaDaSemana = 'Domingo'
+  break;
+  case 1: diaDaSemana = 'Segunda'
+  break;
+  case 2: diaDaSemana = 'Terça'
+  break;
+  case 3: diaDaSemana = 'Quarta'
+  break;
+  case 4: diaDaSemana = 'Quinta'
+  break;
+  case 5: diaDaSemana = 'Sexta'
+  break;
+  case 6: diaDaSemana = 'Sábado'
+  break;
+  default: diaDaSemana = 'Não foi possível saber o dia da semana'
+}
+
+console.log(diaDaSemana)
+
+/*
+Você pode fazer uma função e ao invés de break, passar um "return"
+*/
+ 
+
+
