@@ -76,31 +76,142 @@ Estrutura condicional Switch/Case
 
 - O Switch só funciona com números ou strings.
 */
-let diaDaSemana = new Date().getDay()
+let diaDaSemana = new Date().getDay();
 
-switch(diaDaSemana) {
-  case 0: diaDaSemana = 'Domingo'
-  break;
-  case 1: diaDaSemana = 'Segunda'
-  break;
-  case 2: diaDaSemana = 'Terça'
-  break;
-  case 3: diaDaSemana = 'Quarta'
-  break;
-  case 4: diaDaSemana = 'Quinta'
-  break;
-  case 5: diaDaSemana = 'Sexta'
-  break;
-  case 6: diaDaSemana = 'Sábado'
-  break;
-  default: diaDaSemana = 'Não foi possível saber o dia da semana'
+switch (diaDaSemana) {
+  case 0:
+    diaDaSemana = "Domingo";
+    break;
+  case 1:
+    diaDaSemana = "Segunda";
+    break;
+  case 2:
+    diaDaSemana = "Terça";
+    break;
+  case 3:
+    diaDaSemana = "Quarta";
+    break;
+  case 4:
+    diaDaSemana = "Quinta";
+    break;
+  case 5:
+    diaDaSemana = "Sexta";
+    break;
+  case 6:
+    diaDaSemana = "Sábado";
+    break;
+  default:
+    diaDaSemana = "Não foi possível saber o dia da semana";
 }
 
-console.log(diaDaSemana)
+console.log(diaDaSemana);
 
 /*
 Você pode fazer uma função e ao invés de break, passar um "return"
+
+Atribuição via desestruturação (Arrays)
+
+Operador "..." = rest Operator, ou seja, pega os dados restantes.
+Mas pode ser o spread operator também que serve para expandir os
+valores de um array ou objeto em outro array ou objeto.
 */
- 
 
+const numeros = [120, 205, 33, 42, 565];
+const [primeiroNumero, segundoNumero, terceiroNumero, ...resto] = numeros;
+console.log(primeiroNumero, segundoNumero, terceiroNumero); // 120 205 33
+console.log(resto); // (2) [42, 565]
 
+const matrizNumeros = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+const [, [, , seis]] = matrizNumeros; // Via desestruturação
+
+console.log(matrizNumeros[1][2]); // 6
+console.log(seis); // 6
+
+/*
+Atribuição via desestruturação (Objetos)
+*/
+
+const gerente = {
+  nome: "Cauã",
+  sobrenome: "Miranda",
+  idade: 42,
+  endereco: {
+    rua: "Arlindo Colaço",
+    numero: 532,
+    complemento: "Ap. 62",
+  },
+};
+
+// Pode colocar um "=" e atribuir um valor padrão para caso o atributo não exista no objeto.
+const { nome = "", sobrenome, idade } = gerente;
+
+console.log(nome, sobrenome, idade); // Cauã Miranda 42
+
+// Você pode colocar outro nome na variável
+const { nome: nomeGerente } = gerente;
+console.log(nomeGerente); // Cauã
+
+const {
+  endereco: { rua, numero },
+} = gerente;
+
+/*
+Nesse caso não funciona mais porque a variável endereço não existe mais.
+console.log(endereco); - {rua: 'Arlindo Colaço', numero: 532, complemento: 'Ap. 62'}
+*/
+
+console.log(rua, numero); //Arlindo Colaço 532
+
+/*
+Nesse caso, a variável endereco existe, portanto, pode ser exibida
+*/
+const {
+  endereco: { ruaGerente, numeroGerente },
+  endereco,
+} = gerente;
+
+console.log(endereco);
+
+/*
+Operador rest em objetos
+*/
+const { nome: gerenteNome, ...restoGerente } = gerente;
+console.log(restoGerente); // {sobrenome: 'Miranda', idade: 42, endereco: {…}}
+
+/*
+Estruturas de repetição:
+
+For clássico
+
+i - index
+*/
+
+for (let i = 0; i <= 5; i++) {
+  console.log(`Linha ${i}`); // Imprime linha 0 até linha 5
+}
+
+for (let i = 50; i <= 100; i += 10) {
+  console.log(`Linha ${i}`); // Incrementa de 10 em 10
+}
+
+for (let i = 50; i >= 0; i -= 10) {
+  console.log(`Linha ${i}`); // Decrementa de 10 em 10
+}
+
+// Par ou Impar
+for (let i = 0; i <= 10; i++) {
+  const par = i % 2 === 0 ? "Par" : "Impar";
+  console.log(i, par);
+}
+
+// Percorrer array
+const frutas = ["Uva", "Morango", "Manga", "Pera", "Melancia"];
+
+for (let i = 0; i < frutas.length; i++) {
+  console.log(`Indice ${i}: ${frutas[i]}`); // Uva, morango, manga
+}
