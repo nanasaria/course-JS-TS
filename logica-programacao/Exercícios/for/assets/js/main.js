@@ -32,7 +32,7 @@ const elementos = [
   for(let i = 0; i < elementos.length; i++) {
    const {tag, texto} = elementos[i]
    let elemento = document.createElement(tag)
-   elemento.innerHTML = texto;
+   elemento.innerText = texto;
    div.appendChild(elemento)
   }
 
