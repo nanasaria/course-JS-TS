@@ -17,7 +17,9 @@ function private() {
 private();
 
 /*
-Outra forma de resolver o exercício - Forma do professor
+Outras formas de resolver o exercício - Forma do professor
+______________________________________________________________________
+Forma 1:
 
 const elementos = [
     { tag: "p", texto: "Frase 1" },
@@ -37,5 +39,17 @@ const elementos = [
   }
 
   container.appendChild(div)
+_______________________________________________________________________
+ Forma 2: Com nó de texto:
 
+  for(let i = 0; i < elementos.length; i++) {
+   const {tag, texto} = elementos[i]
+   let elemento = document.createElement(tag)
+   textoCriado = document.createTextNode(texto)
+
+   elemento.appendChild(textoCriado)
+   div.appendChild(elemento)
+  }
+
+  container.appendChild(div)
 */
