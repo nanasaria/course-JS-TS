@@ -215,3 +215,5 @@ const frutas = ["Uva", "Morango", "Manga", "Pera", "Melancia"];
 for (let i = 0; i < frutas.length; i++) {
   console.log(`Indice ${i}: ${frutas[i]}`); // Uva, morango, manga
 }
+
+// DOM - Árvore DOM
