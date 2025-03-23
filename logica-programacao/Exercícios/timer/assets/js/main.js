@@ -17,18 +17,18 @@ const private = () => {
 
     timer = setInterval(() => {
       second++;
+
       if (second === 60) {
         second = 0;
         minute++;
       }
+
       if (minute === 60) {
         minute = 0;
         hour++;
       }
 
-      if (hour === 24) {
-        hour = 0;
-      }
+      if (hour === 24) hour = 0;
       updateHtml("black");
     }, 1000);
   });
