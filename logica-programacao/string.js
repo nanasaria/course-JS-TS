@@ -370,3 +370,52 @@ try {
 } finally {
   // Executada sempre
 }
+
+/*
+setInterval -> configura um Intervalo de tempo para que uma função seja 
+executada em determinado momento
+*/
+
+function horaAtual() {
+  let data = new Date();
+
+  return data.toLocaleTimeString("pt-BR", {
+    hour12: false,
+  });
+}
+
+const mostrarHora = () => console.log(horaAtual());
+
+/* 
+1° parâmetro é a referência da função que será executada de tempos
+em tempos. Passar a referência é chamar a função sem executá-la ou 
+uma função anônima.
+
+2° parâmetro você passa de quanto em quanto tempo a função será executada
+em milésimos de segundos (Milissegundos).
+
+setInterval(function () {
+  console.log(horaAtual());
+}, 1000);
+
+Você também pode colocar dentro de uma variável
+*/
+
+const timer = setInterval(function () {
+  console.log(horaAtual());
+}, 1000);
+
+/*
+SetTimeout - Função usada para executar um código ou uma função após
+um período de tempo em milissegundos.
+
+setTimeout(funcao, tempo);
+*/
+
+setTimeout(function () {
+  clearInterval(timer); // Recebe o nome do intervalo que quer parar.
+}, 10000);
+
+setTimeout(() => {
+  console.log("Olá, mundo!");
+}, 5000);
