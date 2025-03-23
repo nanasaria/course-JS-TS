@@ -285,5 +285,58 @@ For in - Retorna o índice ou chave (strings, arrays ou objetos)
 For of - Retorna o valor de objetos iteráveis (arrays ou strings)
 ______________________________________________________________________
 
-NodeList
+NodeList - É um  objeto semelhante a um array que retorna um conjunto de 
+elementos do document que representa o conteúdo da página. 
+Dentro dos objetos do DOM podem conter uma lista de objetos, que no
+caso, as NodeList.
+
+Lembrando que: HTMLCollection representa uma coleção genérica (objeto array)
+de elementos e oferece métodos e propriedades para selecioná-los da lista.
+
+
+While e Do While - Enquanto e faça enquanto
+
+Função para exibir sequência de 0 a 10
+let controle = 0;
+
+while (controle <= 10) {
+  console.log(controle);
+  controle++;
+}
+
+Função para checar números aleatórios, como roleta russa.
+function random(min, max) {
+  const r = Math.random() * (max - min) + min;
+  return Math.floor(r);
+}
+
+const min = 1;
+const max = 50;
+let rand = random(min, max);
+console.log("Número: ", rand);
+
+while (rand !== 10) {
+  rand = random(min, max);
+  console.log(rand);
+}
+
+Com Do While, você fornece uma condição para o while acontecer.
+Ele executa e depois checa a condição.
+
+do {
+  rand = random(min, max);
+  console.log(rand);
+}while (rand !== 10)
+
+
+Break e continue funciona em laços de repetição como for e while.
 */
+
+const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+for (let n of num) {
+  if (n === 7) {
+    console.log("7 encontrado"); // Assim que há o break, não executa mais nada que está após.
+    break;
+  }
+  console.log(n);
+}
