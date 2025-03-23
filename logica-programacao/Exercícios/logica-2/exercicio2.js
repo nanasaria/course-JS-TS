@@ -11,7 +11,7 @@ const ePaisagem = (altura, largura) => {
     return "largura inválida";
   }
 
-  return Number(largura) > Number(altura) ? true : false;
+  return Number(largura) > Number(altura);
 };
 
 console.log(ePaisagem(200, 250));
