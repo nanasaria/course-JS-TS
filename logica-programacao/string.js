@@ -216,4 +216,74 @@ for (let i = 0; i < frutas.length; i++) {
   console.log(`Indice ${i}: ${frutas[i]}`); // Uva, morango, manga
 }
 
-// DOM - Árvore DOM
+/*
+DOM e a Árvore DOM
+
+Document Object Model.
+
+O objeto geral do navegador é o Window, que é o topo. 
+Os elementos subsequentes são filhos.
+Em document está o HTML.
+
+Pai    -> filho -> filho -> filho
+Window -> HTML ->  Head  -> body
+
+Ou seja, constrói-se uma árvore onde cada elemento é pai e filho.
+
+DOM é na verdade, uma interface de objetos que permite a manipulação
+dentro da página do navegador.
+
+Estrutura de repetição
+
+For in -> Lê os indices do array/vetor ou chaves do objeto
+*/
+
+const frutasFeira = ["Melão", "Abacate", "Mamão", "Amora"];
+
+//Lê os indices do array
+for (let indice in frutasFeira) {
+  console.log(frutasFeira[indice]); //Imprime os itens do array
+}
+
+const ator = {
+  nome: "Fabi",
+  sobrenome: "Bang",
+  idade: 40,
+  papel: "Glinda",
+  peça: "Wicked",
+};
+
+for (let chave in ator) {
+  console.log(`${chave}: ${ator[chave]}`); // Imprime os atributos e seus valores
+}
+
+/*
+For of - percorre objetos iteráveis. Ex: Array, strings...
+Objetos iteráveis são objetos que podem ser percorridos elemento por
+elemento .
+*/
+
+const nomeMedico = "Daniel";
+
+for (let valor of nomeMedico) {
+  console.log(valor); // Lê cada indice e retorna o valor
+}
+
+/*
+ForEach -> Método que chama uma função para cada elemento no array
+*/
+
+frutasFeira.forEach((element, indice, array) => {
+  console.log(element, indice, array); // Retorna o elemento, o indice e o array percorrido.
+});
+
+/*
+______________________________________________________________________
+
+For clássico - Geralmente para objetos iteráveis (array ou strings)
+For in - Retorna o índice ou chave (strings, arrays ou objetos)
+For of - Retorna o valor de objetos iteráveis (arrays ou strings)
+______________________________________________________________________
+
+NodeList
+*/
