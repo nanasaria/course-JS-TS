@@ -340,3 +340,33 @@ for (let n of num) {
   }
   console.log(n);
 }
+
+/*
+
+Tratamento de erros
+
+Try/Catch/Throw
+
+Try é o bloco que fica o código para executar, catch é onde diz o erro.
+Throw é para tratar o erro.
+*/
+
+try {
+  console.log(naoExisto);
+} catch (error) {
+  console.error("Variável não existe");
+}
+
+/*
+Tratamento de erros
+
+Try/Catch/Finally
+*/
+
+try {
+  // Executada quando não há erros
+} catch (e) {
+  //Executada quando há erros
+} finally {
+  // Executada sempre
+}
