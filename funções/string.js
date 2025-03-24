@@ -27,4 +27,20 @@ const objeto = {
     }
 }
 objeto.falar()
+
+Pârametros da função
+
+Quando definimos uma função com a palavra function, fica disponível
+uma variável chamada arguments que fica disponível todos os argumentos
+que você envia para a função mesmo que ela não tenha parâmetros.
+*/
+
+function exemploFuncao() {
+  console.log(arguments[0]); // Valor
+}
+
+exemploFuncao("Valor", 1, 2, 3, 4, 5);
+
+/*
+
 */
