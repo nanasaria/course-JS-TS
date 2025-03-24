@@ -31,8 +31,7 @@ objeto.falar()
 Pârametros da função
 
 Quando definimos uma função com a palavra function, fica disponível
-uma variável chamada arguments que fica disponível todos os argumentos
-que você envia para a função mesmo que ela não tenha parâmetros.
+uma variável chamada arguments que fica disponível todos os argumentos.
 */
 
 function exemploFuncao() {
