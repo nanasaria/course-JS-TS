@@ -2,8 +2,8 @@ const entrada = document.querySelector(".entrada");
 const tarefasHtml = document.querySelector(".tarefas");
 const addTarefa = document.querySelector(".addTarefa");
 
-const ul = document.createElement("ul");
-tarefasHtml.appendChild(ul);
+// const ul = document.createElement("ul");
+// tarefasHtml.appendChild(ul);
 
 addTarefa.addEventListener("click", (e) => {
   createTarefa();
@@ -16,7 +16,7 @@ function createTarefa() {
 
   buttonDelete.className = "excluirTarefa";
   li.innerHTML = entrada.value;
-  ul.appendChild(li);
+  tarefasHtml.appendChild(li);
   li.appendChild(buttonDelete);
   buttonDelete.innerText = "Excluir";
 }
