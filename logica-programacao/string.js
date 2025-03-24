@@ -419,3 +419,8 @@ setTimeout(function () {
 setTimeout(() => {
   console.log("Olá, mundo!");
 }, 5000);
+
+/*
+event.target diz qual elemento está sendo clicado.
+
+*/

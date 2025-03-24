@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+:root {
+  --primary-color: rgb(117, 52, 202);
+  --primary-color-darker: rgb(83, 20, 165);
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color-darker);
+  font-family: "Open sans", sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+.container {
+  max-width: 850px;
+  margin: 50px auto;
+  background: #1b1b1b;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.tarefas button {
+  margin-left: 5%;
+}
+
+.addTarefa {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  width: 160px;
+  height: 40px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.entrada {
+  background-color: #ffffff;
+  color: var(--primary-color);
+  width: 550px;
+  height: 40px;
+  border: none;
+  padding: 2%;
+  margin-left: 5%;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+  margin-top: 5%;
+  color: #ffffff;
+  list-style: none;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  width: 720px;
+}
+
+.excluirTarefa {
+  background-color: #1b1b1b;
+  color: #ffffff;
+  width: 100px;
+  height: 40px;
+  border: none;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.excluirTarefa:hover {
+  background-color: #f0f0f0;
+  color: #1b1b1b;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+h1 {
+  margin-left: 5%;
+}
