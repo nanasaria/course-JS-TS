@@ -154,5 +154,14 @@ function f3Callback() {
 /*
 Funções Imediatas - (IIFE)
 
-Function expression imediatamente invocada
+Function expression imediatamente invocada.
+
+Declaração:
+*/
+(function () {
+  console.log('Executado imediatamente...')
+})();
+
+/*
+Factory Functions - Funções que retornam objetos
 */
