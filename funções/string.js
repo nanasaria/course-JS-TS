@@ -163,5 +163,7 @@ Declaração:
 })();
 
 /*
-Factory Functions - Funções que retornam objetos
+Factory Functions - Funções que retornam objetos.
+
+Quando uma função está dentro de um objeto, isso é um método.
 */
