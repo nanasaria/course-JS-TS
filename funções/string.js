@@ -159,11 +159,37 @@ Function expression imediatamente invocada.
 Declaração:
 */
 (function () {
-  console.log('Executado imediatamente...')
+  console.log("Executado imediatamente...");
 })();
 
 /*
 Factory Functions - Funções que retornam objetos.
 
 Quando uma função está dentro de um objeto, isso é um método.
+Quando estamos dentro de um 
 */
+
+function criaPessoa(nome, sobrenome) {
+  return {
+    // Chaves
+    nome,
+    sobrenome,
+    fala: function (assunto) {
+      /*       
+        Para utilizar o valor da chave, utilize o 
+        this.<chave>. O this se refere a quem chamou
+        o objeto. 
+        É o mesmo que dizer pessoa.nome porque a const
+        pessoa é quem chamou esse método.
+    */
+      return `${this.nome} está falando sobre ${assunto}`;
+    },
+    altura,
+    peso,
+  };
+}
+
+const pessoa = criaPessoa("Janaína", "Freitas");
+console.log(pessoa.fala());
+
+/* Constructor Functions*/
