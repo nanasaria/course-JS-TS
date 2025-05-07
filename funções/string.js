@@ -169,11 +169,11 @@ Quando uma função está dentro de um objeto, isso é um método.
 Quando estamos dentro de um 
 */
 
-function criaPessoa(nome, sobrenome) {
+function criaPessoa(nome, sobrenome, assunto) {
   return {
     // Chaves
     nome,
-    sobrenome,
+    assunto,
     fala: function (assunto) {
       /*       
         Para utilizar o valor da chave, utilize o 
@@ -184,12 +184,10 @@ function criaPessoa(nome, sobrenome) {
     */
       return `${this.nome} está falando sobre ${assunto}`;
     },
-    altura,
-    peso,
   };
 }
 
-const pessoa = criaPessoa("Janaína", "Freitas");
+const pessoa = criaPessoa("Janaína", "Freitas", "Matemática");
 console.log(pessoa.fala());
 
 /*
@@ -206,4 +204,41 @@ Função eval() -> Avalia o que está dentro da string e tenta
                 executar como código JavaScript.
 */
 
-/* Constructor Functions*/
+/* 
+Constructor Functions -> Retorna objetos
+
+A função construtora constrói objetos.
+Na função construtora precisamos mudar a convenção.
+Precisamos sempre iniciar o nome com letra maiúscula.
+O corpo da função já é o objeto.
+
+A palavra New cria um objeto vazio e faz o this apontar para o 
+objeto que está sendo utilizado e retorna implicitamente o objeto
+para a variável.
+
+Em métodos construtores, podemos ter "coisas" privadas e ao invés
+de utilizar this, você pode criar uma const ou let e ela só estará
+disponível no escopo da função.
+*/
+
+function Medico(nome, sobrenome, especialidade) {
+  const id = 1234;
+
+  const metodoInterno = function () {
+    console.log("Método interno.");
+  };
+
+  this.nome = nome;
+  this.sobrenome = sobrenome;
+  this.especialidade = especialidade;
+
+  this.fala = function () {
+    console.log("Sou o", this.nome, "Especialista em", this.especialidade);
+  };
+}
+
+const m1 = new Medico("Luiz", "Arantes", "Cardiologia");
+const m2 = new Medico("Átila", "Argento", "Cirurgia Plástica");
+
+console.log(m1.fala());
+console.log(m2.fala());
