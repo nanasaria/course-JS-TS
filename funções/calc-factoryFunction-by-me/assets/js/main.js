@@ -70,6 +70,17 @@ table.addEventListener("click", (e) => {
       calc.deleteOneValue();
     } else if (valueElement === "=") {
       resultOperation = calc.calculate();
+
+      if (isNaN(resultOperation)) {
+        display.value = "";
+        return alert("Não foi possível calcular.");
+      }
+
+      if (resultOperation === undefined) {
+        display.value = "";
+        return alert("Não foi possível calcular.");
+      }
+
       display.value = resultOperation;
     } else {
       if (valueElement !== undefined) {
