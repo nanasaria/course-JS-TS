@@ -4,23 +4,6 @@ const display = document.querySelector(".display");
 let values = [];
 let resultOperation;
 
-function divideValues() {
-  let firstValue;
-  let secondValue;
-
-  const operators = ["+", "-", "*", "/"];
-
-  const indexOperator = values.findIndex((value) => operators.includes(value));
-
-  firstValue = values.slice(0, indexOperator).join("").toString();
-  secondValue = values
-    .slice(indexOperator + 1)
-    .join("")
-    .toString();
-
-  return { firstValue, secondValue };
-}
-
 function calculadora() {
   const { firstValue, secondValue } = divideValues();
 
@@ -55,6 +38,23 @@ function calculadora() {
       values = [];
     },
   };
+}
+
+function divideValues() {
+  let firstValue;
+  let secondValue;
+
+  const operators = ["+", "-", "*", "/"];
+
+  const indexOperator = values.findIndex((value) => operators.includes(value));
+
+  firstValue = values.slice(0, indexOperator).join("").toString();
+  secondValue = values
+    .slice(indexOperator + 1)
+    .join("")
+    .toString();
+
+  return { firstValue, secondValue };
 }
 
 table.addEventListener("click", (e) => {

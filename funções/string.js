@@ -192,4 +192,18 @@ function criaPessoa(nome, sobrenome) {
 const pessoa = criaPessoa("Janaína", "Freitas");
 console.log(pessoa.fala());
 
+/*
+Método bind() cria uma nova função que, quando chamada, tem sua 
+palavra-chave this definida com o valor fornecido.
+
+Veja melhor em:
+https://ricardo-reis.medium.com/o-m%C3%A9todo-bind-do-javascript-435ce499383b
+
+Não é necessário utilizar o this se você utilizar uma arrow 
+function. A arrow function não permite alteração do this.
+
+Função eval() -> Avalia o que está dentro da string e tenta
+                executar como código JavaScript.
+*/
+
 /* Constructor Functions*/
