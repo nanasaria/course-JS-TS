@@ -242,3 +242,61 @@ const m2 = new Medico("Átila", "Argento", "Cirurgia Plástica");
 
 console.log(m1.fala());
 console.log(m2.fala());
+
+/*
+Função recursiva
+É uma função que chama ela mesma.
+*/
+function recursiva(max) {
+  //Se o valor for maior que 10, retorna, ou seja, sai da função
+  if (max >= 10) return;
+  //Incrementa a cada vez que executa
+  max++;
+  //Apresenta um log do max
+  console.log(max);
+
+  //Chama a função de novo
+  recursiva(max);
+}
+
+recursiva(0);
+
+/*
+Funções Geradoras
+É usada para "Pausar" o código.
+
+Lazy evaluation.
+
+Para uma função geradora, utilize um * depois de function.
+Ao invés de return utilizamos yield.
+
+A primeira vez que você chamar, retorna um yield.
+
+O return em função geradora retorna um valor e encerra a
+função geradora.
+*/
+
+function* geradora1() {
+  //Retorna na primeira chamada
+  yield "valor 1";
+
+  //Retorna na segunda chamada
+  yield "Valor 2";
+
+  //Retorna na terceira chamada
+  yield "Valor 3";
+}
+
+const g1 = geradora1();
+/* 
+Retorna 1 objeto contendo o valor e uma chave com 
+valor boolean que especifica se a função geradora terminou. 
+
+O next é um método de objeto gerador que "diz" para a 
+função: "Me traz o próximo yield"
+Caso não tenha executado nenhuma vez antes, retorna o 
+primeiro yield.
+*/
+console.log(g1.next().value); // 1
+console.log(g1.next().value); // 2
+console.log(g1.next().value); // 3
