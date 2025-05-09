@@ -64,4 +64,6 @@ Cada arquivo contém exemplos práticos e comentários detalhados explicando os 
 <img src="https://www.svgrepo.com/show/374144/typescript.svg" height="70"/>
 </div>
 
+</br>
+</br>
 <i>Curso de JavaScript e TypeScript do básico ao avançado JS/TS - Luiz Otávio Miranda</i>
