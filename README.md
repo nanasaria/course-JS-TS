@@ -67,4 +67,6 @@ Cada arquivo contém exemplos práticos e comentários detalhados explicando os 
 
 </br>
 </br>
+<div align="center">
 <i>Curso de JavaScript e TypeScript do básico ao avançado JS/TS - Luiz Otávio Miranda</i>
+</div>
