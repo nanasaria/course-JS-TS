@@ -63,3 +63,5 @@ Cada arquivo contém exemplos práticos e comentários detalhados explicando os 
 <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" height="70"/>
 <img src="https://www.svgrepo.com/show/374144/typescript.svg" height="70"/>
 </div>
+
+<i>Curso de JavaScript e TypeScript do básico ao avançado JS/TS - Luiz Otávio Miranda</i>
