@@ -391,3 +391,43 @@ const olderPerson = pessoas.reduce(function (acumulador, valor) {
 });
 
 console.log(olderPerson);
+
+/*
+Map + filter + reduce
+
+Como unir?
+Podemos combinar e retornar um único valor.
+Da seguinte forma:
+*/
+const numerosPares = numeros
+  .filter((valor) => valor % 2 === 0)
+  .map((valor) => valor * 2)
+  .reduce((acumulador, valor) => (acumulador += valor));
+
+console.log(numerosPares);
+
+/*
+Foreach
+
+Forma de iterar sobre arrays.
+Foreach só está disponível para arrays.
+
+Foreach não permite usar o break ou continue.
+Não funciona bem com operações assíncronas com await.
+Não retorna valor.
+*/
+const a1 = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+
+a1.forEach(function (valor, indice, array) {
+  console.log(array[indice]);
+});
+
+/*
+Simulando um reduce
+ */
+let totalForeach = 0;
+a1.forEach((valor) => {
+  totalForeach += valor;
+});
+
+console.log(totalForeach);
