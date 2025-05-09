@@ -2,10 +2,8 @@
 
 ## O que é JavaScript?
 
-<div align="left">
-JavaScript é uma linguagem de programação que permite a você implementar itens complexos em páginas web — toda vez que uma página da web faz mais do que simplesmente mostrar a você informação estática — mostrando conteúdo que se atualiza em um intervalo de tempo, mapas interativos ou gráficos 2D/3D animados, etc.
-</div>
-<div align="right">
+<div align="center">
+<p>JavaScript é uma linguagem de programação que permite a você implementar itens complexos em páginas web — toda vez que uma página da web faz mais do que simplesmente mostrar a você informação estática — mostrando conteúdo que se atualiza em um intervalo de tempo, mapas interativos ou gráficos 2D/3D animados, etc.</p>
 <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGw0Y3J6OTNvY2d3bGdvc3puazEzM3I0Y2lvZG9rNHJvdThnaXVyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26tn33aiTi1jkl6H6/giphy.gif" height="200"/>
 </div>
 
