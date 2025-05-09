@@ -58,6 +58,7 @@ Este repositório contém anotações detalhadas e exemplos práticos sobre Java
 Cada arquivo contém exemplos práticos e comentários detalhados explicando os conceitos.
 
 <div align="center">
+</br>
 <img src="https://www.svgrepo.com/show/373703/js.svg" height="70"/>
 <img src="https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png" height="70"/>
 <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" height="70"/>
