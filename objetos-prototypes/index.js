@@ -216,7 +216,7 @@ const produto6 = {
  Aponta para o mesmo lugar na memória.
  */
 const outraCoisa = produto6;
-outraCoisa.nome = "Prato"; //Muda de Produto6 e outraCoisa
+outraCoisa.nome = "Produto base"; //Muda de Produto6 e outraCoisa
 
 /*
 Copiando o objeto e alocando em outro lugar na memória:
@@ -224,7 +224,132 @@ Copiando o objeto e alocando em outro lugar na memória:
 const caneca = { ...produto6 };
 caneca.nome = "Caneca";
 caneca.preco = 29.99;
+console.log(caneca);
 
 /*
 Object.assign()
+
+Método usado para copiar os valores de todas as propriedades 
+próprias enumeráveis de um ou mais objetos de origem para
+um objeto DESTINO. Após a cópia, ele retorna o objeto destino 
+modificado.
+Podemos também mesclar objetos.
+
+Características importantes
+Cópia superficial (shallow copy):
+
+Copia apenas as referências de objetos aninhados, não os 
+objetos em si
+
+Se uma propriedade da origem for um objeto, apenas a 
+referência é copiada
+
+Sobrescreve propriedades existentes:
+Se o objeto destino já tiver uma propriedade com o 
+mesmo nome, ela será sobrescrita
+
+Múltiplas origens:
+
+Você pode especificar vários objetos de origem
+
+As propriedades são copiadas na ordem em que os 
+objetos são fornecidos
+
+Objetos posteriores sobrescrevem propriedades com 
+o mesmo nome de objetos anteriores
+
+1° Argumento: {} -> Objeto vazio
+2° Argumento: Qual objeto copiar
+3° Argumento: O que gostaria de criar
+*/
+
+const talheres = Object.assign({}, produto6, { material: "Metal" });
+talheres.nome = "Talheres";
+talheres.preco = 460.87;
+console.log(talheres);
+
+/*
+get.OwnPropertyDescriptor(o, "prop")
+Retorna as configurações de determinada propriedade de
+um objeto.
+
+1° Argumento: Objeto.
+2° Argumento: Propriedade.
+*/
+
+console.log(Object.getOwnPropertyDescriptor(produto6, "nome"));
+
+/*
+Object.values
+
+Retorna o valor das chaves
+*/
+
+console.log(Object.values(produto6));
+
+/*
+Object.values
+
+Retorna as chaves e o valor
+*/
+
+console.log(Object.entries(produto6));
+
+/*
+Podemos fazer destructuring no for:
+*/
+
+for (let [chave, valor] of Object.entries(produto6)) {
+  console.log(chave, valor);
+}
+
+/*
+Prototypes
+
+O JavaScript é baseado em protótipos para passar propriedades
+e métodos de um objeto para outro.
+
+Definição
+Protótipo é o que se cria pela primeira vez, serve de modelo
+ou molde para futuras produções.
+
+Todos os objetos tem uma referência interna para um protótipo
+(__proto__) que vem da propriedade prototype da função
+construtora que foi usada para criá-lo. Quando tentamos acessar
+um membro de um objeto, primeiro o motor do JS vai tentar
+encontrar este membro no próprio objeto e depois a cadeia
+de protótipos é usada até o topo (null) até encontrar (ou não)
+tal membro.
+ */
+
+function Student(nome, sobrenome) {
+  this.nome = nome;
+  this.sobrenome = sobrenome;
+  this.nomeCompleto = () => this.nome + " " + this.sobrenome;
+}
+
+/*
+Isso adiciona ao prototype linkado ao objeto construtor
+Quando se adiciona ao prototype, ele adiciona para todos
+os objetos que instanciam o objeto construtor.
+*/
+Student.prototype.carteirinha = "";
+
+const student1 = new Student("Sophia", "Bush"); // Student -> Função construtora
+const data = new Date(); // Date -> Função construtora
+
+console.dir(student1);
+console.dir(data);
+
+/*
+Podemos adicionar métodos para todos os objetos:
+ */
+
+Student.prototype.apresentar = function () {
+  `Meu nome é ${this.nome} ${this.sobrenome} e estudo nesta instituição.`;
+};
+
+/*
+Caso escreva uma função no prototype para substituir, por hierarquia, o 
+JS procura primeiramente no objeto e apenas depois no prototype.
 */
