@@ -364,16 +364,16 @@ const objB = {
   chaveB: "B",
 };
 
-const objC = new Object()
-objC.chaveC = "C"
+const objC = new Object();
+objC.chaveC = "C";
 
 /*
 Definindo o objA como prototype e 
 objB como prototype de objC:
 */
-Object.setPrototypeOf(objB, objA)
-Object.setPrototypeOf(objC, objB)
-console.log(objB.chaveA)
+Object.setPrototypeOf(objB, objA);
+Object.setPrototypeOf(objC, objB);
+console.log(objB.chaveA);
 
 /*
 Não é recomendado utilizar o __proto__ porque pode atrapalhar
@@ -382,4 +382,135 @@ a performance.
 Se quiser acessar o prototype, utilize:
 */
 
-Object.getPrototypeOf(objA)
+Object.getPrototypeOf(objA);
+
+/*
+A partir de agora vamos criar métodos via prototype:
+*/
+
+function ProdutoTecnologia(nome, preco) {
+  this.nome = nome;
+  this.preco = preco;
+}
+
+ProdutoTecnologia.prototype.desconto = function (percentual) {
+  this.preco = this.preco - this.preco * (percentual / 100);
+};
+
+ProdutoTecnologia.prototype.aumento = function (percentual) {
+  this.preco = this.preco + this.preco * (percentual / 100);
+};
+
+const pTec = new ProdutoTecnologia("Teclado", 359.4);
+pTec.desconto(10);
+pTec.aumento(26);
+console.log(pTec);
+
+/* Objeto Literal */
+const pTec2 = {
+  nome: "Mouse",
+  preco: 250.99,
+};
+
+/*
+O novo objeto recebe o prototype do objeto construtor
+*/
+Object.setPrototypeOf(pTec2, ProdutoTecnologia.prototype);
+pTec2.aumento(10);
+console.log(pTec2);
+
+/*
+Podemos criar o objeto já colocando o prototype
+
+a função create() do prototype pode receber algumas coisas:
+- Prototype
+- Chaves
+- Configurações
+*/
+
+const pTec3 = Object.create(ProdutoTecnologia.prototype, {
+  preco: {
+    writable: true,
+    configurable: true,
+    enumerable: true,
+    value: 40,
+  },
+});
+
+pTec3.aumento(15);
+console.log(pTec3);
+
+/*
+Herança
+
+Um objeto recebe os atributos de um objeto pai.
+Em JavaScript não há a característica de "herança". O que
+ocorre, na verdade, é "delegação".
+*/
+
+function Product(name, price) {
+  this.name = name;
+  this.price = price;
+}
+
+Product.prototype.increase = function (quantity) {
+  this.price += quantity;
+};
+
+Product.prototype.discount = function (quantity) {
+  this.price -= quantity;
+};
+
+/*
+O call é quem recebe os atributos de Product.
+Primeiro argumento passamos o objeto que queremos 
+referenciar e os próximos são quais atributos.
+*/
+function Shirt(name, price, color) {
+  Product.call(this, name, price);
+  this.color = color;
+}
+
+/*
+Criando um objeto vazio e setando o Prototype desse objeto
+vazio como produto.
+ */
+Shirt.prototype = Object.create(Product.prototype);
+/*
+Passando o constructor do novo objeto.
+*/
+Shirt.prototype.constructor = Shirt;
+
+/* Podemos sobrescrever um método */
+Shirt.prototype.aumento = function (percent) {
+  this.price = this.price + this.price * (percent / 100);
+};
+
+const product = new Product("Cropped", 50);
+const shirt = new Shirt("Regata", 35.7, "Preta");
+shirt.increase(30);
+console.log(shirt);
+console.log(product);
+
+function Mug(name, price, material, stock) {
+  Product.call(this, name, price);
+  this.material = material;
+
+  Object.defineProperty(this, "stock", {
+    enumerable: true,
+    configurable: false,
+    get: function() {
+      return stock
+    },
+    set: function(value) {
+      if(typeof value !== "number") return
+      stock = value
+    }
+  })
+}
+
+Mug.prototype = Object.create(Product.prototype);
+Mug.prototype.constructor = Mug;
+const mug = new Mug("Caneca", 19.99, "Cerâmica", 20)
+mug.stock = 10
+console.log(mug)
