@@ -352,4 +352,25 @@ Student.prototype.apresentar = function () {
 /*
 Caso escreva uma função no prototype para substituir, por hierarquia, o 
 JS procura primeiramente no objeto e apenas depois no prototype.
+
+Manipulando Prototype
 */
+
+const objA = {
+  chaveA: "A",
+};
+
+const objB = {
+  chaveB: "B",
+};
+
+const objC = new Object()
+objC.chaveC = "C"
+
+/*
+Definindo o objA como prototype e 
+objB como prototype de objC:
+*/
+Object.setPrototypeOf(objB, objA)
+Object.setPrototypeOf(objC, objB)
+console.log(objB.chaveA)
