@@ -374,3 +374,12 @@ objB como prototype de objC:
 Object.setPrototypeOf(objB, objA)
 Object.setPrototypeOf(objC, objB)
 console.log(objB.chaveA)
+
+/*
+Não é recomendado utilizar o __proto__ porque pode atrapalhar
+a performance.
+
+Se quiser acessar o prototype, utilize:
+*/
+
+Object.getPrototypeOf(objA)
