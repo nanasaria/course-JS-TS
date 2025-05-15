@@ -127,3 +127,47 @@ class Tablet extends DispositivoEletronico {
     this.temWifi = temWifi;
   }
 }
+
+/*
+Métodos de instâncias e estáticos
+
+Métodos estáticos são métodos que não são necessários serem
+instanciados e não estão disponíveis dentro da instância.
+ */
+
+class ControleRemoto {
+  constructor(tv) {
+    this.tv = tv;
+    this.volume = 0;
+  }
+
+  /* Métodos de instância */
+  aumentarVolume() {
+    this.volume += 2;
+  }
+
+  diminuirVolume() {
+    this.volume -= 2;
+  }
+
+  /* Método estático */
+  static trocaPilha() {
+    console.log("Trocando pilha...");
+  }
+}
+
+const controle1 = new ControleRemoto("LG");
+
+let quant = 0;
+while (quant < 5) {
+  controle1.aumentarVolume();
+  quant++;
+}
+console.log(controle1);
+
+/* 
+Para executar o método estático -> Sem instância
+Não conseguimos utilizar o this porque ele é referente
+ao contructor e quando é estático, não instanciamos.
+*/
+ControleRemoto.trocaPilha();
