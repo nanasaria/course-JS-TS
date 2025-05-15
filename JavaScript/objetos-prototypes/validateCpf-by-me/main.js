@@ -33,7 +33,54 @@ Se o dígito variar, é inválido.
 o CPF precisa ser uma string.
 */
 
-let cpf = "705.484.450-52";
-let clearCpf = cpf.replace(/\D+/g, "");
-Array.from(clearCpf);
-// Vou utilizar acumulador.
+let cpfUser = "705.484.450-52";
+cpfUser = clearCpf(cpfUser);
+console.log(verifyCpf(cpfUser));
+
+function verifyCpf(cpf) {
+  cpf = cpf.split("").slice(0, -2);
+  const firstDigit = generateDigit(cpf);
+  cpf.push(firstDigit);
+
+  const secondDigit = generateDigit(cpf);
+  cpf.push(secondDigit);
+
+  const newCpf = clearCpf(cpf.toString());
+
+  if (cpfUser !== newCpf) {
+    return "CPF Inválido!";
+  }
+
+  return "CPF Válido!";
+}
+
+function clearCpf(cpf) {
+  cpf = cpf.replace(/\D+/g, "");
+  return cpf;
+}
+
+function generateDigit(arrayCpf) {
+  const multiplier = arrayCpf.length + 2;
+
+  const multiplied = multiplyCpf(arrayCpf, multiplier);
+  let digit = 11 - (multiplied % 11);
+
+  if (digit > 9) {
+    digit = 0;
+  }
+
+  return digit;
+}
+
+function multiplyCpf(arrayCpf, multiplier) {
+  const total = arrayCpf
+    .map((digit) => {
+      multiplier--;
+      return Number(digit) * multiplier;
+    })
+    .reduce((ac, val) => {
+      return ac + val;
+    });
+
+  return total;
+}
