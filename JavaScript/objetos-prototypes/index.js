@@ -499,18 +499,75 @@ function Mug(name, price, material, stock) {
   Object.defineProperty(this, "stock", {
     enumerable: true,
     configurable: false,
-    get: function() {
-      return stock
+    get: function () {
+      return stock;
     },
-    set: function(value) {
-      if(typeof value !== "number") return
-      stock = value
-    }
-  })
+    set: function (value) {
+      if (typeof value !== "number") return;
+      stock = value;
+    },
+  });
 }
 
 Mug.prototype = Object.create(Product.prototype);
 Mug.prototype.constructor = Mug;
-const mug = new Mug("Caneca", 19.99, "Cerâmica", 20)
-mug.stock = 10
-console.log(mug)
+const mug = new Mug("Caneca", 19.99, "Cerâmica", 20);
+mug.stock = 10;
+console.log(mug);
+
+/*
+Polimorfismo
+Maneira de fazer métodos se comportarem de maneiras 
+diferentes (sub-classes).
+
+Factory Functions e Prototypes
+*/
+
+const estudar = {
+  estudar() {
+    console.log(`${this.nome} está estudando`);
+  },
+};
+
+const pessoaPrototype = { ...estudar };
+function StudentDevelopment(nome, sobrenome) {
+  return Object.create(pessoaPrototype, {
+    nome: {
+      value: nome,
+    },
+    sobrenome: {
+      value: sobrenome,
+    },
+  });
+}
+
+const s1 = StudentDevelopment("Britney", "Spears");
+
+/*
+Objeto Map() -> Estrutura de dados
+*/
+
+const pessoas = [
+  { id: 3, nome: "Luiz" },
+  { id: 2, nome: "Maria" },
+  { id: 1, nome: "Helena" },
+];
+
+/*
+Colocar o id como chave mantendo a ordem
+*/
+const novasPessoas = new Map();
+for (const pessoa of pessoas) {
+  const { id } = pessoa;
+  /* Para colocar em novas pessoas */
+  novasPessoas.set(id, { ...pessoa });
+}
+
+console.log(novasPessoas);
+/* Para retornar uma pessoa baseada na chave */
+console.log(novasPessoas.get(2));
+
+/* Retornar um Array */
+for (const pessoa of novasPessoas) {
+  console.log(pessoa);
+}
