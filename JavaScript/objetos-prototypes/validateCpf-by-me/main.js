@@ -45,7 +45,7 @@ function verifyCpf(cpf) {
   const secondDigit = generateDigit(cpf);
   cpf.push(secondDigit);
 
-  const newCpf = clearCpf(cpf.toString());
+  const newCpf = clearCpf(cpf.join(""));
 
   if (cpfUser !== newCpf) {
     return "CPF Inválido!";
