@@ -1,9 +1,12 @@
+const forms = document.querySelector("form");
+const cpf_input = document.querySelector(".cpf");
+
 class CPF {
   constructor(cpf) {
     this.cpf = cpf.replace(/\D+/g, "");
   }
 
-  validate() {
+  isValid() {
     if (typeof this.cpf === "undefined") return false;
     if (this.cpf.length !== 11) return false;
     if (this.isSequence()) return false;
@@ -34,7 +37,19 @@ class CPF {
     const sequence = this.cpf[0].repeat(this.cpf.length);
     return sequence === this.cpf;
   }
+
+  messageError(message) {
+    const li = document.createElement("li");
+    li.innerText = message;
+    error.appendChild(li);
+  }
 }
 
-const cpf = new CPF("705.484.450-52");
-cpf.validate();
+forms.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const cpf = new CPF(cpf_input.value);
+  console.log(forms)
+  if (!cpf.isValid()) return cpf.messageError("CPF Inválido");
+  return cpf.messageError("")
+});
