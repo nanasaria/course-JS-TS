@@ -6,7 +6,7 @@ class CPF {
   validate() {
     if (typeof this.cpf === "undefined") return false;
     if (this.cpf.length !== 11) return false;
-    if (this.isSequencia()) return false;
+    if (this.isSequence()) return false;
 
     const cpfPart = this.cpf.slice(0, -2);
     const digit1 = this.createDigit(cpfPart);
@@ -30,9 +30,9 @@ class CPF {
     return digit > 9 ? "0" : String(digit);
   }
 
-  isSequencia() {
-    const sequencia = this.cpf[0].repeat(this.cpf.length);
-    return sequencia === this.cpf;
+  isSequence() {
+    const sequence = this.cpf[0].repeat(this.cpf.length);
+    return sequence === this.cpf;
   }
 }
 
