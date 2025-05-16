@@ -45,11 +45,3 @@ class ValidaCPF {
     return this.novoCPF === this.cpfLimpo;
   }
 }
-
-const validaCpf = new ValidaCPF("705.484.450-52");
-
-if (validaCpf.valida()) {
-  console.log("Valido");
-} else {
-  console.log("invalido");
-}
