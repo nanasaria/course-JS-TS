@@ -571,3 +571,16 @@ console.log(novasPessoas.get(2));
 for (const pessoa of novasPessoas) {
   console.log(pessoa);
 }
+
+/*
+Em JavaScript podemos acessar ou criar uma propriedade de 
+um objeto da seguinte forma:
+const obj = {};
+obj["maçã"] = 1;
+
+Em JavaScript, objetos são estruturas de chave-valor.
+A chave pode ser qualquer string e você pode criar
+ou acessar dinamicamente usando a notação
+obj[chave]. Ou seja, uma chave não se repete,
+ela é criada ou sobrescrita.
+*/
