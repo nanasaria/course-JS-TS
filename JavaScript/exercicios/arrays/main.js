@@ -213,3 +213,233 @@ console.log(countFruits);
 const words5 = ["Ana", "Bruno", "Carlos"];
 const stringWord5 = words5.reduce((ac, item) => (ac += `, ${item}`));
 console.log(stringWord5);
+
+/*
+Map
+Transformar nomes em maiúsculas
+Dado ['ana', 'bruno', 'carlos'], crie um novo array com os nomes em maiúsculas.
+
+Adicionar prefixo "Sr./Sra."
+Dado ['Ana', 'Bruno', 'Carlos'], crie um novo array adicionando "Sr./Sra." antes de cada nome.
+ */
+
+const names3 = ["ana", "bruno", "carlos"];
+const nameUpper = names3.map((name) => name.toUpperCase());
+console.log(nameUpper);
+
+const names4 = ["Ana", "Bruno", "Carlos"];
+const mr = names4.map((name) => `Sr./Sra. ${name}`);
+console.log(mr);
+
+/*
+Filter
+Filtrar números ímpares
+Dado [1, 2, 3, 4, 5, 6, 7, 8], crie um novo array só com os números ímpares.
+
+Filtrar nomes que terminam com a letra 'o'
+Dado ['Paulo', 'Ana', 'Bruno', 'Carlos'], filtre os que terminam com a letra 'o'.
+
+Remover itens repetidos (deixar só os diferentes)
+Dado ['maçã', 'banana', 'uva', 'maçã', 'laranja', 'banana'], crie um array só com os itens que aparecem uma única vez.
+Dica: use filter junto com indexOf e lastIndexOf.
+*/
+
+const numbers2 = [1, 2, 3, 4, 5, 6, 7, 8];
+const impar = numbers2.filter((num) => num % 2 !== 0);
+console.log(impar);
+
+const names5 = ["Paulo", "Ana", "Bruno", "Carlos"];
+const namesWithO = names5.filter((name) => name.endsWith("o"));
+console.log(namesWithO);
+
+const fruits = ["maçã", "banana", "uva", "maçã", "laranja", "banana"];
+const fruitExclusive = fruits.filter(
+  (fruit) => fruits.indexOf(fruit) === fruits.lastIndexOf(fruit)
+);
+console.log(fruitExclusive);
+
+/*
+Reduce
+Multiplicar todos os números
+Dado [1, 2, 3, 4], use reduce para multiplicar todos os números e retornar o resultado.
+
+Encontrar a string mais longa
+Dado ['banana', 'uva', 'maçã', 'laranja'], use reduce para retornar a string com mais caracteres.
+
+Somar o total de preços
+Dado:
+
+const carrinho = [
+  { produto: 'Mouse', preco: 50 },
+  { produto: 'Teclado', preco: 100 },
+  { produto: 'Monitor', preco: 600 }
+];
+Use reduce para somar os preços.
+*/
+
+const numbers3 = [1, 2, 3, 4];
+const multiplied = numbers3.reduce((total, num) => (total *= num));
+console.log(multiplied);
+
+const fruits2 = ["banana", "uva", "maçã", "laranja"];
+const fruitMoreCharacter = fruits2.reduce((count, fruit) => {
+  count = fruit;
+  if (fruit.length > count.length) {
+    count = fruit;
+  }
+
+  return count;
+});
+
+console.log(fruitMoreCharacter);
+
+/* Forma melhor */
+const longestFruit = fruits2.reduce((long, fruit) =>
+  long.length > fruit.length ? long : fruit
+);
+
+console.log(longestFruit);
+
+const carrinho = [
+  { produto: "Mouse", preco: 50 },
+  { produto: "Teclado", preco: 100 },
+  { produto: "Monitor", preco: 600 },
+];
+
+const sumPriceCar = carrinho.reduce(
+  (total, { preco }) => (total += Number(preco)),
+  0
+);
+console.log(sumPriceCar);
+
+/*
+Combo (map + filter + reduce)
+Obter só os nomes dos usuários ativos e concatenar em uma string separada por vírgula
+Dado:
+
+const users = [
+  { id: 1, nome: 'Ana', ativo: true },
+  { id: 2, nome: 'Bruno', ativo: false },
+  { id: 3, nome: 'Carlos', ativo: true }
+];
+→ Pega só quem está ativo, mapeia os nomes e junta em uma string tipo: 'Ana, Carlos'
+*/
+
+const users3 = [
+  { id: 1, nome: "Ana", ativo: true },
+  { id: 2, nome: "Bruno", ativo: false },
+  { id: 3, nome: "Carlos", ativo: true },
+];
+
+const usersActive2 = users3
+  .filter(({ ativo }) => ativo)
+  .map(({ nome }) => nome)
+  .reduce((string, name) => (string += `, ${name}`));
+console.log(usersActive2);
+
+/*
+Filtrar e somar preços acima de 100
+Dado:
+
+const produtos = [
+  { nome: 'Mouse', preco: 50 },
+  { nome: 'Teclado', preco: 150 },
+  { nome: 'Monitor', preco: 600 },
+  { nome: 'Fone', preco: 90 },
+];
+*/
+
+const produtos2 = [
+  { nome: "Mouse", preco: 50 },
+  { nome: "Teclado", preco: 150 },
+  { nome: "Monitor", preco: 600 },
+  { nome: "Fone", preco: 90 },
+];
+
+const sumProducts2 = produtos2
+  .filter(({ preco }) => preco > 100)
+  .reduce((total, { preco }) => (total += preco), 0);
+
+console.log(sumProducts2);
+
+/*
+Contar quantos nomes começam com cada letra
+Dado:
+*/
+
+const nomes = ["Ana", "Bruno", "Carlos", "Beatriz", "Camila", "Amanda"];
+const countLetterName = nomes
+  .map((letter) => letter.at(0))
+  .reduce((count, item) => {
+    count[item] = (count[item] || 0) + 1;
+    return count;
+  }, {});
+console.log(countLetterName);
+
+/*
+Criar uma lista de IDs de usuários ativos
+Dado:
+*/
+
+const usuarios = [
+  { id: 1, nome: "Ana", ativo: true },
+  { id: 2, nome: "Bruno", ativo: false },
+  { id: 3, nome: "Carlos", ativo: true },
+  { id: 4, nome: "Eva", ativo: true },
+];
+
+const idUsers = usuarios.filter(({ ativo }) => ativo).map(({ id }) => id);
+console.log(idUsers);
+
+/*
+Retornar um array só com os números únicos (sem repetição).
+Dado:
+*/
+
+const numeros = [1, 2, 3, 4, 2, 3, 5, 1, 6];
+const dontRepeat = numeros.filter(
+  (num) => numeros.indexOf(num) === numeros.lastIndexOf(num)
+);
+
+console.log(dontRepeat);
+
+/*
+Agrupar produtos por categoria
+Dado:
+*/
+
+const listaProdutos = [
+  { nome: "Mouse", categoria: "Periféricos" },
+  { nome: "Teclado", categoria: "Periféricos" },
+  { nome: "Notebook", categoria: "Computadores" },
+  { nome: "Monitor", categoria: "Periféricos" },
+  { nome: "Servidor", categoria: "Computadores" },
+];
+
+const group = listaProdutos.reduce((ac, item) => {
+  if (!ac[item.categoria]) {
+    ac[item.categoria] = [];
+  }
+
+  ac[item.categoria].push(item.nome);
+  return ac;
+}, {});
+console.log(group);
+
+/*
+Transformar array de objetos em um objeto por ID
+Dado:
+*/
+
+const dados = [
+  { id: 1, nome: "Ana" },
+  { id: 2, nome: "Bruno" },
+  { id: 3, nome: "Carlos" },
+];
+
+const withId = dados.reduce((ac, item) => {
+  ac[item.id] = item.nome;
+  return ac;
+}, {});
+
+console.log(withId);
