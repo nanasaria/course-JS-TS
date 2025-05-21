@@ -46,4 +46,17 @@ readFile() -> Lê conteúdo de um arquivo.
 
 OBSERVAÇÃO IMPORTANTE: Quando retornamos de uma função 
 assíncrona, retornamos uma promessa.
+
+Express - Requisições
+
+req.params -> Parâmetros por URL
+https://www.site.com/1 -> Parâmetro
+
+req.querys -> Query string na URL (?nome=joao)
+https://www.site.com/1?nome=joao -> Para indicar que vai 
+passar uma query ?query=
+
+req.body
+
+
 */
