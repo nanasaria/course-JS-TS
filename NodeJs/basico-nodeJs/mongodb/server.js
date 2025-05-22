@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express");
 const app = express();
 const routes = require("./routes");
@@ -5,9 +6,9 @@ const path = require("path");
 const { middlewareGlobal } = require("./src/middlewares/middleware");
 
 const mongoose = require("mongoose");
-const connectionString = `mongodb+srv://nanasaria:dbcursojs@cursojs.xlmpm45.mongodb.net/Teste?retryWrites=true&w=majority&appName=cursojs`;
+
 mongoose
-  .connect(connectionString, {
+  .connect(process.env.CONNECTION_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -21,7 +22,8 @@ mongoose
     Nesse caso, emitimos o evento "pronto".
      */
     app.emit("pronto");
-  });
+  })
+  .catch((e) => console.log(e));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, "public")));
