@@ -130,4 +130,41 @@ Em Node, middlewares são responsáveis por:
 autenticação, log, parsing de dados, etc).
 - Decidem se passam para o próximo middleware ou
 encerra a requisição.
+
+O que são Cookies e sessions?
+
+Cookies
+É um pequeno arquivo de texto que o servidor envia
+para o navegador do cliente e que fica salvo no navegador.
+
+Para que servem cookies?
+Para armazenar pequenas informações do lado do cliente.
+
+Como funcionam?
+- O servidor envia um cookie no header da resposta.
+- O navegador salva.
+- Em cada nova requisição, o navegador envia esse cookie
+automaticamente junto com o request.
+
+Cookies e Local Storage são coisas diferentes.
+Cookies vão junto nas requisições HTTP e podem ser lidos
+pelo servidor.
+Local Storage fica no navegador e é acessível apenas via 
+JavaScript no front-end.
+
+Session
+É um mecanismo para armazenar dados do usuário no servidor
+entre múltiplas requisições HTTP.
+
+Para que serve?
+Controla estados de autenticação ou armazena dados
+temporários de forma mais segura.
+
+Como funciona?
+Quando o usuário acessa a aplicação, o servidor cria uma
+sessão e associa um ID.
+Esse ID é salvo no navegador via cookie.
+A cada requisição, o navegador envia esse cookie com o
+session ID, e o servidor usa isso para recuperar os
+dados da sessão.
 */
