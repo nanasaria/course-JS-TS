@@ -95,6 +95,27 @@ app.use(express.urlencoded({ extended: true }))
 corretamente os dados de formulários enviados no corpo de
 uma requisição e transformar em um objeto Js.
 
+Padrão MVC - (Model-View-Controller)
+O padrão MVC divide uma aplicação em três componentes
+fundamentais:
 
+1. Model (Modelo): Gerencia os dados e a lógica de negócios
+da aplicação.
 
+2. View (Visualização): Apresenta a interface do usuário.
+
+3. Controller (Controlador): Mantém o Model e a View em 
+sincronia. É quem recebe as ações do usuário, atualiza
+o modelo e informa à View para mostrar os resultados.
+
+O MVC segue um fluxo de comunicação unidirecional:
+- O Model nunca se comunica diretamente com a View.
+- A View pode solicitar dados ao Model.
+- O Controller é o único componente que pode modificar
+o Model e a View.
+
+O MVC pode ser usado em conjunto com outros padrões de
+design, como o padrão Observer e o padrão Singleton.
+
+Arquivo estático -> Arquivos fixos
 */
