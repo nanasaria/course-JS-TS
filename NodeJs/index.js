@@ -118,4 +118,16 @@ O MVC pode ser usado em conjunto com outros padrões de
 design, como o padrão Observer e o padrão Singleton.
 
 Arquivo estático -> Arquivos fixos
+
+Middleware 
+É uma função que fica no "meio do caminho" entre a 
+requisição feita pelo cliente e a resposta enviada
+pelo servidor.
+
+Em Node, middlewares são responsáveis por:
+- Interceptar a requisição ou resposta.
+- Fazer algum processamento (validação, 
+autenticação, log, parsing de dados, etc).
+- Decidem se passam para o próximo middleware ou
+encerra a requisição.
 */

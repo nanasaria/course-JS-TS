@@ -5,23 +5,31 @@ Este diretório contém exemplos práticos e anotações sobre Node.js, organiza
 ## Estrutura do Diretório
 
 ### Módulos
+
 Exemplos de como criar e utilizar módulos no Node.js:
+
 - **app.js**: Demonstra como importar módulos usando require e destructuring
 - **mod1.js**: Exemplo de módulo com exportação de variáveis, funções e classes
 
 ### Manipulando-arquivos
+
 Exemplos de operações com arquivos e diretórios:
+
 - **escrevendo-lendo-arquivos.js**: Demonstra como escrever e ler arquivos, incluindo manipulação de JSON
 - **lendo-diretorios.js**: Exemplo de como listar e percorrer diretórios recursivamente
 - **teste.txt** e **teste.json**: Arquivos de exemplo para demonstração
 
 ### Express
+
 Configuração básica de um servidor web usando Express:
+
 - **server.js**: Configuração inicial de um servidor Express
 - **package.json**: Dependências e configurações do projeto
 
 ### index.js
+
 Arquivo principal com anotações sobre:
+
 - Conceitos básicos de módulos
 - Variáveis internas (`__filename` e `__dirname`)
 - Manipulação de caminhos com o módulo `path`
@@ -32,38 +40,45 @@ Arquivo principal com anotações sobre:
 ## Conceitos Abordados
 
 ### Sistema de Módulos
+
 - Como organizar código em arquivos separados
 - Exportação e importação de módulos
 - Variáveis internas do Node.js
 
 ### Manipulação de Arquivos
+
 - Leitura e escrita de arquivos de texto e JSON
 - Navegação em diretórios
 - Operações assíncronas com arquivos
 
 ### Express Framework
+
 - Configuração básica de servidor
 - Manipulação de requisições (req.params, req.query, req.body)
 - Middlewares e seu funcionamento
 - Processamento de dados de formulários
 
 ### Padrão MVC (Model-View-Controller)
+
 O padrão MVC divide uma aplicação em três componentes fundamentais:
 
-1. **Model (Modelo)**: 
+1. **Model (Modelo)**:
+
    - Gerencia os dados e a lógica de negócios da aplicação
    - Responsável pelo acesso e manipulação dos dados
 
-2. **View (Visualização)**: 
+2. **View (Visualização)**:
+
    - Apresenta a interface do usuário
    - Exibe os dados ao usuário final
 
-3. **Controller (Controlador)**: 
+3. **Controller (Controlador)**:
    - Mantém o Model e a View em sincronia
    - Recebe as ações do usuário
    - Atualiza o modelo e informa à View para mostrar os resultados
 
 #### Fluxo de comunicação no MVC:
+
 - O Model nunca se comunica diretamente com a View
 - A View pode solicitar dados ao Model
 - O Controller é o único componente que pode modificar o Model e a View
@@ -77,3 +92,9 @@ O MVC pode ser usado em conjunto com outros padrões de design, como o padrão O
 - [Módulo fs (File System)](https://nodejs.org/api/fs.html)
 - [Módulo path](https://nodejs.org/api/path.html)
 - [Padrão MVC](https://developer.mozilla.org/en-US/docs/Glossary/MVC)
+
+<br>
+<br>
+<br>
+
+<div align="center"><i><b>As Pastas contidas em "basico-nodeJs" estão seguindo o mesmo padrão. A diferença entre elas é a inserção do novo conteúdo.</b></i></div>
