@@ -56,7 +56,45 @@ req.querys -> Query string na URL (?nome=joao)
 https://www.site.com/1?nome=joao -> Para indicar que vai 
 passar uma query ?query=
 
-req.body
+req.body => Corpo da requisição
+
+
+app.use(express.urlencoded({ extended: true }))
+O app.use é um método usado para registrar middlewares.
+
+Middlewares -> São funções que executam algum código,
+processam a requisição, podem modificar o objeto req ou res,
+e então decidem se passam o controle para o próximo 
+middleware ou encerram a resposta.
+
+Resumo: app.use() serve para aplicar funções intermediárias
+entre o cliente e o servidor em todas/algumas rotas.
+
+Nesse caso do:
+app.use(express.urlencoded({ extended: true }))
+
+Esse middleware é usado para interpretar dados enviados 
+em requisições HTTP com o 
+Content-Type: application/x-www-form-urlencoded.
+
+express.urlencoded() -> Converte textos recebidos via 
+formulário para um objeto JavaScript. Dessa forma, o 
+servidor consegue trabalhar com o retorno.
+
+{extended: true} -> Parâmetro para definir qual biblioteca
+de parsing será usada internamente.
+extended: true -> Permite que objetos aninhados e arrays
+sejam enviados.
+
+extended: false -> Usa a biblioteca queryString que é mais
+limitada e não consegue lidar tão bem com objetos 
+complexos ou aninhados.
+
+app.use(express.urlencoded({ extended: true })) 
+É utilizado para que o Express consiga ler e interpretar 
+corretamente os dados de formulários enviados no corpo de
+uma requisição e transformar em um objeto Js.
+
 
 
 */
