@@ -1,0 +1,22 @@
+<%- include("includes/head"); %>
+
+<header>
+  <h1>
+    <!-- Para Declarar algo no ejs: -->
+    <%= titulo%>
+
+    <!-- Para fazer um if -->
+
+    <% if(typeof titulo !== "undefined"){ %> <%= titulo %> <% } else { %> Título
+    não encontrado. <% } %>
+
+    <!-- Para controlar o fluxo, sem sinal
+          Para exibir algo, utilize = 
+          Para renderizar HTML não processado utilize - -->
+  </h1>
+
+  <!-- Exibindo o valor da variável Local -->
+  <h2><%= umaVariavelLocal%></h2>
+</header>
+
+<%- include("includes/footer"); %>

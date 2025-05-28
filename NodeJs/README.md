@@ -1,6 +1,6 @@
 # Node.js - Anotações e Exemplos
 
-Este diretório contém exemplos práticos e anotações sobre Node.js, organizados por tópicos para facilitar o aprendizado e referência.
+Este diretório contém exemplos práticos e anotações sobre Node js, organizados por tópicos para facilitar o aprendizado e referência.
 
 ## Estrutura do Diretório
 
@@ -37,6 +37,20 @@ Arquivo principal com anotações sobre:
 - Requisições e middlewares no Express
 - Padrão MVC (Model-View-Controller)
 
+### basico-nodeJs
+
+Diretório com exemplos práticos e progressivos de desenvolvimento com Node.js:
+
+- **Express**: Configuração básica do framework Express
+- **Express-nodemon**: Configuração com nodemon para reinicialização automática do servidor
+- **Routes - Aula**: Implementação de rotas com Express
+- **Views - Aula**: Integração de views com EJS
+- **Arquivos Estáticos**: Servindo arquivos estáticos (CSS, imagens)
+- **middlewares**: Implementação e uso de middlewares
+- **Webpack**: Configuração do Webpack para bundling de assets
+- **inject-views**: Injeção de conteúdo em views
+- **mongodb**: Integração com MongoDB e implementação de modelos de dados
+
 ## Conceitos Abordados
 
 ### Sistema de Módulos
@@ -57,6 +71,9 @@ Arquivo principal com anotações sobre:
 - Manipulação de requisições (req.params, req.query, req.body)
 - Middlewares e seu funcionamento
 - Processamento de dados de formulários
+- Roteamento
+- Servindo arquivos estáticos
+- Integração com sistemas de templates (EJS)
 
 ### Padrão MVC (Model-View-Controller)
 
@@ -66,11 +83,13 @@ O padrão MVC divide uma aplicação em três componentes fundamentais:
 
    - Gerencia os dados e a lógica de negócios da aplicação
    - Responsável pelo acesso e manipulação dos dados
+   - Implementação com MongoDB
 
 2. **View (Visualização)**:
 
    - Apresenta a interface do usuário
    - Exibe os dados ao usuário final
+   - Implementação com EJS
 
 3. **Controller (Controlador)**:
    - Mantém o Model e a View em sincronia
@@ -83,7 +102,11 @@ O padrão MVC divide uma aplicação em três componentes fundamentais:
 - A View pode solicitar dados ao Model
 - O Controller é o único componente que pode modificar o Model e a View
 
-O MVC pode ser usado em conjunto com outros padrões de design, como o padrão Observer e o padrão Singleton.
+### Ferramentas de Desenvolvimento
+
+- **Nodemon**: Reinicialização automática do servidor durante desenvolvimento
+- **Webpack**: Bundling de assets (JavaScript, CSS)
+- **Dotenv**: Gerenciamento de variáveis de ambiente
 
 ## Recursos Úteis
 
@@ -92,9 +115,8 @@ O MVC pode ser usado em conjunto com outros padrões de design, como o padrão O
 - [Módulo fs (File System)](https://nodejs.org/api/fs.html)
 - [Módulo path](https://nodejs.org/api/path.html)
 - [Padrão MVC](https://developer.mozilla.org/en-US/docs/Glossary/MVC)
+- [MongoDB](https://www.mongodb.com/docs/)
+- [EJS](https://ejs.co/)
+- [Webpack](https://webpack.js.org/)
 
-<br>
-<br>
-<br>
-
-<div align="center"><i><b>As Pastas contidas em "basico-nodeJs" estão seguindo o mesmo padrão. A diferença entre elas é a inserção do novo conteúdo.</b></i></div>
+<div align="center"><i><b>As Pastas contidas em "basico-nodeJs" seguem uma progressão de aprendizado, cada uma adicionando novos conceitos sobre a anterior.</b></i></div>
