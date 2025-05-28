@@ -3,8 +3,16 @@ const express = require("express");
 const app = express();
 const routes = require("./routes");
 const path = require("path");
-const { middlewareGlobal } = require("./src/middlewares/middleware");
-
+const helmet = require("helmet");
+const csrf = require("csurf");
+const {
+  middlewareGlobal,
+  checkCsrfError,
+  csrfMiddleware,
+} = require("./src/middlewares/middleware");
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+const flash = require("connect-flash");
 const mongoose = require("mongoose");
 
 mongoose
@@ -17,14 +25,14 @@ mongoose
   })
   .catch((e) => console.log(e));
 
-const session = require("express-session");
-const MongoStore = require("connect-mongo");
-const flash = require("connect-flash");
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, "public")));
+app.use(helmet());
+app.use(csrf());
 app.use(routes);
 app.use(middlewareGlobal);
+app.use(checkCsrfError);
+app.use(csrfMiddleware);
 
 const sessionOptions = session({
   secret: "minha-chave-secreta",

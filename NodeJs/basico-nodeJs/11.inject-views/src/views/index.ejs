@@ -19,4 +19,13 @@
   <h2><%= umaVariavelLocal%></h2>
 </header>
 
+<section class="container">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+  <form action="/" method="post">
+    <label for="cliente">Cliente</label>
+    <input type="text" name="cliente" id="" />
+    <button>Submit</button>
+  </form>
+</section>
+
 <%- include("includes/footer"); %>
