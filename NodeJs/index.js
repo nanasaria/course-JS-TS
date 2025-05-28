@@ -167,4 +167,21 @@ Esse ID é salvo no navegador via cookie.
 A cada requisição, o navegador envia esse cookie com o
 session ID, e o servidor usa isso para recuperar os
 dados da sessão.
+
+Express Session
+É um middleware do Express que permite armazenar informações
+no lado do servidor entre requisições HTTP de um mesmo cliente.
+Basicamente: ele cria uma sessão para cada usuário que
+acessa sua aplicação e armazena os dados da sessão em 
+algum lugar.
+
+Flash Messages
+São mensagens temporárias que você envia do backend para
+o frontend (Ou de um middleware para outro) e que duram
+só uma requisição.
+
+Geralmente são para notificar o usuário, como:
+- Login realizado
+- Erro ao cadastrar o usuário.
+- Sessão expirada.
 */

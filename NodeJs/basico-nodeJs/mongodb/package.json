@@ -19,11 +19,13 @@
     "webpack-cli": "^3.3.9"
   },
   "dependencies": {
+    "connect-flash": "^0.1.1",
     "core-js": "^3.3.2",
     "css-loader": "^3.2.0",
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "express-session": "^1.18.1",
     "mongodb": "3.0",
     "mongoose": "^8.15.0",
     "regenerator-runtime": "^0.13.3",
