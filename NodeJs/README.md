@@ -118,9 +118,9 @@ O padrão MVC divide uma aplicação em três componentes fundamentais:
 - [MongoDB](https://www.mongodb.com/docs/)
 - [EJS](https://ejs.co/)
 - [Webpack](https://webpack.js.org/)
-
+</br></br>
 <div align="center">
 <i>O projeto agenda está em uma versão bem antiga, portanto é apenas para fins de estudo.</i>
-</br></br></br>
+</br></br>
 <i><b>As Pastas contidas em "basico-nodeJs" seguem uma progressão de aprendizado, cada uma adicionando novos conceitos sobre a anterior.</b></i>
 </div>
