@@ -24,6 +24,7 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mariadb": "^3.4.2",
+    "multer": "^2.0.1",
     "sequelize": "^6.37.7"
   }
 }

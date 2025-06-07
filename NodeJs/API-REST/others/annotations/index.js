@@ -56,4 +56,30 @@ Seeds
 São scripts ou arquivos que inserem dados iniciais no banco de
 dados. Esses dados podem ser informações obrigatórias para o
 sistema funcionar (como usuários padrões).
+
+________________________________________________________________
+
+Multer
+É uma biblioteca que facilita o upload de arquivos via HTTP,
+especialmente quando se usa o Express. Funciona como um middleware
+que processa os dados multipart/form-data.
+
+________________________________________________________________
+
+ON DELETE CASCADE: Se o registro pai for deletado, o filho
+também é deletado.
+
+ON UPDATE CASCADE: Se a primary key do registro for alterada,
+isso é refletido no registro filho.
+
+RESTRICT: significa que qualquer tentativa de apagar ou atualizar
+o registro pai vai falhar lançando um erro.
+
+NO ACTION: Sem ações. Significa que o MySQL não vai realizar nenhuma
+ação por você. Porém, você não poderá alterar a foreign key do
+registro filho caso a primary key do registro pai não tiver
+sido atualizada.
+
+SET NULL: Se você apagar ou atualizar a primary key do registro
+pai, a foreign key do registro filho será configurada para NULL.
 */
