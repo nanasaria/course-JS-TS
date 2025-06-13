@@ -1,4 +1,8 @@
 /*
+React Js
+A versão React utilizada nesse curso é de 2022, portanto, 
+está bem antiga.
+
 Componentes
 
 Componentes são escritos como funções e o retorno dessas
@@ -30,4 +34,23 @@ instância de maneira mais simples e clara.
 Um padrão no react é utilizar a nomenclatura "handle" 
 quando utilizamos manipuladores de eventos (Ex: onChange);
 
+componentDidUpdate 
+É um método do ciclo de vida de componentes de classe no 
+React.
+Ele é chamado logo depois de o componente ser utilizado,
+ou seja:
+- Depois que o render() for chamado novamente.
+- E depois que o DOM for atualizado.
+
+Acontece, por exemplo, quando:
+- o state muda via this.setState()
+- ou as props recebidas pelo componente mudam
+
+componentDidMount 
+É um método do ciclo de vida de componentes de classe no 
+React.
+Ele é chamado automaticamente pelo React assim que o 
+componente é montado na tela (DOM), ou seja, logo depois 
+que o render() é executado pela primeira vez e o componente 
+aparece para o usuário.
 */
