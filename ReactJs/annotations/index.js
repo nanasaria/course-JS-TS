@@ -53,4 +53,7 @@ Ele é chamado automaticamente pelo React assim que o
 componente é montado na tela (DOM), ou seja, logo depois 
 que o render() é executado pela primeira vez e o componente 
 aparece para o usuário.
+
+React Hooks
+Manipulação de estados.
 */
